@@ -1,0 +1,611 @@
+@use 'p-loading';
+/*---------- Header ----------*/
+.p-header {
+    background-color: var(--header-color);
+    color: var(--header-font-color);
+    &__logo {
+        animation: appeal 2s linear infinite;
+        &-link {
+            height: var(--header-logo-size);
+        }
+    }
+}
+@media screen and (min-width: 960px) {
+    .p-header {
+        bottom: 10%;
+    }
+}
+
+/*---------- Navigation ----------*/
+.p-nav {
+    &__item {
+        list-style: none;
+        padding: 0 5px;
+    }
+    &__link {
+        display: block;
+        position: relative;
+        &:before {
+            content: '';
+            width: 0px;
+            height: 0px;
+            border-radius: 50%;
+            position: absolute;
+            top: 34%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            transition: .3s;
+            z-index: -1;
+            background-color: rgba(255,255,255,.5);
+        }
+        @media screen and (max-width: 959px) {
+            &:before {
+                top: 44%;
+            }
+        }
+        &:hover:before {
+            width: 30px;
+            height: 30px;
+        }
+        @media screen and (max-width: 959px) {
+            &:hover:before {
+                width: 40px;
+                height: 40px;
+            }
+        }
+    }
+    @media screen and (min-width: 960px) {
+        &__icon {
+            width: 25px;
+            height: 25px;
+            transform: translateY(-3%);
+        }    
+    }
+    @media screen and (max-width: 959px) {
+        &__icon {
+            width: 30px;
+            height: 30px;
+            transform: translateY(7%);
+        }    
+    }
+}
+//iPad
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .p-nav {
+    }
+}
+
+
+/*---------- Parts PC ONLY ----------*/
+/* p-logo-pc */
+.p-logo-pc {
+    width: 300px;
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.2));
+}
+/* p-center-icon */
+.p-center-icon {
+    &__right, &__left {
+        width: 220px;
+        height: 220px;
+    }
+    &__right {
+        clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+        .cls-2 {
+            stroke: var(--main-color);
+        }
+    }
+    &__left {
+        clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+        .cls-2 {
+            stroke: var(--sub-color);
+        }
+    }
+    &__text {
+        position: fixed;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 3rem;
+        writing-mode: vertical-lr;
+        text-orientation: upright;
+        & span {
+            text-orientation: sideways;
+        }
+        &:first-of-type {
+            color: var(--user-yellow-color);
+            left: 39%;
+        }
+        &:last-of-type {
+            color: var(--main-color);
+            right: 39%;
+        }
+    }
+}
+//iPad
+@media screen and (min-width: 800px) and (max-width: 1200px) and (orientation: landscape) {
+    .p-center-icon {
+        &__right, &__left {
+            width: 160px;
+            height: 160px;
+            svg {
+                width: 110px;
+                height: 110px;
+            }
+        }
+    }    
+}
+.cls-1,.cls-2 {
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 4px;
+}
+/* p-move-name */
+.p-move-name {
+    font-size:20rem;
+    opacity: .5;
+    display:inline-block;
+    position:absolute;
+    transition:8s;
+    top:24%;
+    left:32%;
+    -webkit-text-stroke: 1px ;
+    cursor: default;
+    transition-timing-function: ease-in-out;
+}
+
+/*---------- Card ----------*/
+.p-card {
+    cursor: pointer;
+    transform-style: preserve-3d;
+    &:hover &__front {
+        transform: rotateY(180deg);
+    }
+    &:hover &__back {
+        transform: rotateY(0deg);
+    }
+    &__front, &__back {
+        transition: 1.5s;
+        transition-timing-function: ease;
+        backface-visibility: hidden;
+    }
+    &__back {
+        transform: rotateY(180deg);
+    }
+    &__message {
+        width: 650px;
+        height: 650px;
+        clip-path: polygon(0 0, 80% 0, 80% 100%, 0 100%);
+        &:after {
+            content: '';
+            display: block;
+            height: 500px;
+            width: 50px;
+            position: absolute;
+            top: 50%;
+            right: 100px;
+            transform: translateY(-50%);
+            filter: blur(5px);
+            background-color: var(--main-color);
+        }
+    }
+}
+/* p-character-pc */
+.p-game {
+    &__character-image, &__mole-image {
+        width: 300px;
+        cursor: pointer;
+    }
+    &__character {
+        transform: rotate(135deg);
+        top: -125px;
+        left: -125px;
+        &:after {
+            content: '＼BATTLE／';
+            display: block;
+            position: absolute;
+            color: var(--sub-color);
+            top: -10%;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        &:hover {
+            top: -80px;
+            left: -80px;    
+        }
+        &.move {
+            top: -300px;
+            left: -300px;
+        }
+    }
+    &__top-left {
+        transform: rotate(135deg);
+        top: -260px;
+        left: -260px;
+        &.active {
+            top: -80px;
+            left: -80px;    
+        }
+    }
+    &__top-right {
+        transform: rotate(-135deg);
+        top: -260px;
+        right: -260px;
+        &.active {
+            top: -80px;
+            right: -80px;    
+        }
+    }
+    &__bottom-left {
+        transform: rotate(45deg);
+        bottom: -260px;
+        left: -260px;
+        &.active {
+            bottom: -80px;
+            left: -80px;    
+        }
+    }
+    &__bottom-right {
+        transform: rotate(-45deg);
+        bottom: -260px;
+        right: -260px;
+        &.active {
+            bottom: -80px;
+            right: -80px;    
+        }
+    }
+    &__counter {
+        font-size: 20rem;
+        text-shadow: 0 2px 10px rgba(0,0,0,.5);
+        -webkit-text-stroke: 3px var(--main-color);
+        cursor: default;
+    }
+    &__container {
+        transform: translateY(-120%);
+        transition: .5s;
+        &.visible {
+            transform: translate(0);
+            .p-game__container-image {
+                transform: rotate(90deg) translateY(250px);
+            }
+        }
+        &:before {
+            content: '';
+            display: block;
+            background-color: #555;
+            opacity: .5;
+            width: 100%;
+            height: 100%;
+        }
+        &-image {
+            width: 900px;
+            transform: rotate(90deg) translateY(950px);
+            transition: 1s;
+            transition-delay: .5s;
+        }
+    }
+    &__close-btn {
+        cursor: pointer;
+    }
+}
+.p-game {
+}
+
+/*---------- Mobile Screen ----------*/
+@media screen and (min-width: 960px) {
+    .p-smartPhone-frame {
+        pointer-events: none;
+        transform: translateX(1px);
+    }    
+}
+
+/* background-animation-star */
+.p-background-animation {
+    width: 170%;
+    height: 100%;
+    transform: translate(-50%,-50%) rotate(-45deg);
+    top: 36%;
+    left: 70%;
+    & span {
+        position: absolute;
+        height: 3px;
+        right: 0;
+        border-radius: 5px;;
+        background-color: tomato;
+        opacity: .3;
+        animation: star 12s infinite;
+        &:before {
+            content: "";
+            display: block;
+            background: var(--main-color);
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: -15%;
+            transform: translateY(-50%);
+        }
+        &:nth-of-type(6n+1) {
+            animation-delay: 2s;
+        }
+        &:nth-of-type(6n+2) {
+            animation-delay: 6s;
+        }
+        &:nth-of-type(6n+3) {
+            animation-delay: 4s;
+        }
+        &:nth-of-type(6n+4) {
+            animation-delay: 8s;
+        }
+        &:nth-of-type(6n+5) {
+            animation-delay: 10s;
+        }
+        &:nth-of-type(4n+1) {
+            right: 25px;
+        }
+        &:nth-of-type(4n+2) {
+            right: -25px;
+        }
+    }
+}
+//iPhoneSE
+@media screen and (max-width: 959px) and (min-aspect-ratio: 9/16) {
+    .p-background-animation {
+        height: 130%;
+        top: 30%;
+        left: 70%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        & span {
+            animation: star-se 12s infinite;
+        }
+    }
+}
+//iPhoneX
+@media screen and (max-width: 959px) and (max-aspect-ratio: 9/16) {
+    .p-background-animation {
+        height: 130%;
+        top: 40%;
+        left: 60%;
+        transform: translate(-50%, -47%) rotate(-45deg);
+        & span {
+            animation: star-x 12s infinite;
+        }
+    }
+}
+
+/* Main */
+.p-main {
+    &__inner {
+    }
+}
+
+/* p-menubar PC ONLY */
+.p-menubar {
+    &__top {
+        height: 10%;
+        background-color: #f6f6f6;
+        color: lightgray;    
+        padding: 1rem 1.5rem 0 2rem;
+        font-size: .6rem;
+        &:after {
+            content: 'てづっぴ.jp';
+            display: block;
+            background: gainsboro;
+            color: white;
+            text-align: center;
+            line-height: 1.6;
+            border-radius: 8px;
+            width: 150px;
+            height: 18px;
+            position: absolute;
+            bottom: 7px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+    &__bottom {
+        height: 10%;
+        background-color: #f6f6f6;
+        color: lightgray;    
+        padding-top: 2px;
+        &:after {
+            content: '';
+            display: block;
+            background: lightgray;
+            width: 80px;
+            height: 3px;
+            position: absolute;
+            bottom: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        svg {
+            cursor: pointer;
+            transition: .5s;
+        }
+        svg:hover {
+            color: #555;
+        }    
+    }
+}
+
+/* p-logo */
+.p-logo {
+    filter: drop-shadow(0 2px 2px rgba(0,0,0,.2));
+}
+//iPhoneSE
+@media screen and (max-width: 599px) and (min-aspect-ratio: 9/16) {
+    .p-logo {
+        padding: 0 2rem;
+        margin-top: -6px;
+    }
+}
+//iPhoneX
+@media screen and (max-width: 959px) and (max-aspect-ratio: 9/16) {
+    .p-logo {
+        margin-top: -6px;
+    }
+}
+//iPad
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .p-logo {
+        margin-top: -10px;
+        padding: 0;
+    }
+}
+
+
+/* Section */
+
+/* p-slider-balloon */
+//iPhoneSE
+@media screen and (max-width: 599px) and (min-aspect-ratio: 9/16) {
+    .p-slider-balloon {
+        margin-top: 2.2rem;
+        margin-bottom: 3rem;
+        padding: 0 1.5rem 1rem;
+    }    
+}
+//iPhoneX
+@media screen and (max-width: 959px) and (max-aspect-ratio: 9/16) {
+    .p-slider-balloon {
+        margin-top: 4rem;
+        margin-bottom: 5.5rem;
+        padding: 1rem;
+    }    
+}
+//iPad
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .p-slider-balloon {
+        margin-top: 6rem;
+        margin-bottom: 10.5rem;
+        padding: 0 5rem;
+    }    
+}
+
+/* p-slider */
+.p-slider {
+    &:before {
+        content: '';
+        background-color: var(--main-color);
+        width: 25px;
+        height: 25px;
+        position: absolute;
+        bottom: -5%;
+        left: 50%;
+        transform: translateX(-50%) rotate(45deg);
+        z-index: 0;
+    }
+}
+//iPhoneSE
+@media screen and (max-width: 599px) and (min-aspect-ratio: 9/16) {
+    .p-slider {
+        &:before {
+            bottom: -3%;
+        }
+    }
+}
+//iPad
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .p-slider {
+        &:before {
+            width: 35px;
+            height: 35px;
+            bottom: -4%;
+        }
+    }
+}
+
+
+/* p-character */
+.p-character {
+    transform: scale(1.25);
+    transform-origin: top;
+}
+//iPhoneSE
+@media screen and (max-width: 599px) and (min-aspect-ratio: 9/16) {
+    .p-character {
+        transform: scale(1.15);
+        &__image {
+            transform: scaleY(.98);
+        }
+    }
+}
+//iPad
+@media screen and (min-width: 600px) and (max-width: 959px) {
+    .p-character {
+        transform: scale(1.15);
+
+    }
+}
+
+/* p-channel */
+.p-channel {
+    transform: translateY(-17%);
+}
+//iPhoneSE
+@media screen and (max-width: 599px) and (min-aspect-ratio: 9/16) {
+    .p-channel {
+        transform: scale(.99) translateY(-16%);
+    }
+}
+
+/* p-talk */
+.p-talk {
+    &__text {
+        top: 20%;
+        white-space: nowrap;
+        cursor: default;
+        color: var(--talk-color);
+        -webkit-text-stroke: 1.2px var(--talk-stroke-color);
+        text-shadow: 
+            2px 0px var(--talk-edge-color),  -2px 0px var(--talk-edge-color),
+            0px -2px var(--talk-edge-color), 0px 2px var(--talk-edge-color),
+            2px 2px var(--talk-edge-color), -2px 2px var(--talk-edge-color),
+            2px -2px var(--talk-edge-color), -2px -2px var(--talk-edge-color),
+            1px 2px var(--talk-edge-color),  -1px 2px var(--talk-edge-color),
+            1px -2px var(--talk-edge-color), -1px -2px var(--talk-edge-color),
+            2px 1px var(--talk-edge-color),  -2px 1px var(--talk-edge-color),
+            2px -1px var(--talk-edge-color), -2px -1px var(--talk-edge-color),
+            rgba(0,0,0,.5) 0 3px 5px;
+    }
+}
+@media screen and (min-width: 960px) {
+    .p-talk {
+        &__text {
+            font-size: 1.5em;
+        }
+    }
+}
+//iPhoneSE
+@media screen and (max-width: 959px) and (min-aspect-ratio: 9/16) {
+    .p-talk {
+        &__text {
+            top: 35%;
+            font-size: 2.5em;
+        }
+    }
+}
+//iPhoneX
+@media screen and (max-width: 959px) and (max-aspect-ratio: 9/16) {
+    .p-talk {
+        &__text {
+            top: 45%;
+            font-size: 2.5em;
+        }
+    }
+}
+
+/*---------- Footer PC ONLY ----------*/
+.p-footer {
+    background: var(--footer-color);
+    color: var(--footer-font-color);
+    &__link {
+        font-size: 80%;
+        transform: translateY(-50%) rotate(-90deg) translateY(-80%);
+    }
+    &__copy {
+        margin-right: .5em;
+        transform: translateY(-50%) rotate(90deg) translateY(-140%);
+    }
+}

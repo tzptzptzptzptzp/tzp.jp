@@ -1,0 +1,8 @@
+.c-btn {
+  transition: 0.3s;
+  box-shadow: 0 5px 0 rgba(0, 0, 0, 0.2);
+}
+.c-btn:hover {
+  transform: translateY(5px);
+  box-shadow: none;
+}/*# sourceMappingURL=component.css.map */

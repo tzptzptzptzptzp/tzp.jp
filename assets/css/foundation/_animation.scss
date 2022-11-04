@@ -1,0 +1,206 @@
+/* ROTATE */
+.a-rotate {
+    animation: rotate 20s linear infinite reverse;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* SWING */
+.a-swing {
+    animation: swing 1.5s linear infinite;
+}
+@keyframes swing {
+    0%,100% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(20px);
+    }
+    75% {
+        transform: translateX(-20px);
+    }
+}
+
+/* APPEAL */
+.a-appeal {
+    animation: appeal 5s infinite;
+}
+@keyframes appeal {
+    0% {
+        transform: scale(1) rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(10deg)
+    }
+
+    50% {
+        transform: scale(1.2) rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-10deg)
+    }
+
+    100% {
+        transform: scale(1) rotate(0deg);
+    }
+}
+
+/* BOUND */
+.a-bound {
+    animation: bound 5s ease infinite;
+}
+@keyframes bound {
+    0%,50%,100% {
+        transform: scaleY(.99) translateY(0px);
+    }
+    25% {
+        transform: skew(.5deg) translateY(5px);
+    }
+    75% {
+        transform: skew(-.5deg) translateY(5px);
+    }
+}
+
+/* VIBRATO */
+.a-vib {
+    animation: vib 0.1s infinite;
+}
+@keyframes vib {
+    0% {
+        transform: scale(1, 1);
+    }
+    50% {
+        transform: scale(0.95, 0.92);
+    }
+}
+
+/* TALK */
+.a-talk {
+    animation-name: talk;
+    animation-duration: 25s;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+@keyframes talk {
+	0%,1% {
+        transform: translateY(15px);
+        opacity: 0;
+	}
+    4%,16%,10% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+	19%,20%,100% {
+        transform: translateY(-15px);
+        opacity: 0;
+	}
+}
+
+/* LOGO */
+.a-logo {
+    animation-name: logo;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
+@keyframes logo {
+	0%,100%{
+        transform: translateY(0%) skewY(0deg);
+	}
+    25%,75% {
+        transform: translateY(-8%) skewY(-4deg);
+    }
+    50% {
+        transform: translateY(-5%) skewY(-1deg);
+    }
+}
+
+/* CARD*/
+.a-card {
+    animation: card 3s linear infinite;
+}
+@keyframes card {
+    0%,50%,100%  {
+        transform: rotate(0deg);
+    }
+    25%  {
+        transform: rotate(3deg);
+    }
+    75%  {
+        transform: rotate(-3deg);
+    }
+}
+
+/* BATTLE*/
+.a-battle {
+    animation: battle 5s linear infinite;
+    transform-origin: left;
+}
+@keyframes battle {
+	0%,50%,100% {
+        transform: rotate(0deg);
+	}
+	25% {
+        transform: rotate(10deg);
+    }
+    75% {
+        transform: rotate(-10deg);
+    }
+}
+/* STAR */
+@keyframes star {
+	0%{
+        width: 0px;
+        transform: translate(0);
+	}
+    35% {
+        width: 80px;
+    }
+    65% {
+        width: 80px;
+    }
+	100%{
+        width: 0px;
+        transform: translateX(-600px);
+    }
+}
+@keyframes star-se {
+    0%{
+        width: 0px;
+        transform: translate(0);
+    }
+    35% {
+        width: 80px;
+    }
+    65% {
+        width: 80px;
+    }
+    100%{
+        width: 0px;
+        transform: translateX(-800px);
+    }
+}
+@keyframes star-x {
+    0%{
+        width: 0px;
+        transform: translate(0);
+    }
+    35% {
+        width: 80px;
+    }
+    65% {
+        width: 80px;
+    }
+    100%{
+        width: 0px;
+        transform: translateX(-950px);
+    }
+}

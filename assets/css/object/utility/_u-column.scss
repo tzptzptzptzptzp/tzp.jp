@@ -1,0 +1,116 @@
+//PC column
+@media screen and (min-width: 960px) {
+    .u-col {
+        flex: 1 0 0%;
+    }
+    .u-col-auto {
+        flex: 0 0 auto;
+        width: auto;
+    }
+    .u-col-1 {
+        flex: 0 0 auto;
+        width: 8.33333333%;
+    }
+    .u-col-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+    .u-col-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .u-col-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+    .u-col-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+    }
+    .u-col-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .u-col-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%;
+    }
+    .u-col-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+    .u-col-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    .u-col-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+    .u-col-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+    }
+    .u-col-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }    
+}
+//SP column
+@media screen and (max-width: 959px) {
+    .u-sp-col {
+        flex: 1 0 0%;
+    }
+    .u-sp-col-auto {
+        flex: 0 0 auto;
+        width: auto;
+    }
+    .u-sp-col-1- {
+        flex: 0 0 auto;
+        width: 8.33333333%;
+    }
+    .u-sp-col-2 {
+        flex: 0 0 auto;
+        width: 16.66666667%;
+    }
+    .u-sp-col-3 {
+        flex: 0 0 auto;
+        width: 25%;
+    }
+    .u-sp-col-4 {
+        flex: 0 0 auto;
+        width: 33.33333333%;
+    }
+    .u-sp-col-5 {
+        flex: 0 0 auto;
+        width: 41.66666667%;
+    }
+    .u-sp-col-6 {
+        flex: 0 0 auto;
+        width: 50%;
+    }
+    .u-sp-col-7 {
+        flex: 0 0 auto;
+        width: 58.33333333%;
+    }
+    .u-sp-col-8 {
+        flex: 0 0 auto;
+        width: 66.66666667%;
+    }
+    .u-sp-col-9 {
+        flex: 0 0 auto;
+        width: 75%;
+    }
+    .u-sp-col-10 {
+        flex: 0 0 auto;
+        width: 83.33333333%;
+    }
+    .u-sp-col-11 {
+        flex: 0 0 auto;
+        width: 91.66666667%;
+    }
+    .u-sp-col-12 {
+        flex: 0 0 auto;
+        width: 100%;
+    }    
+}

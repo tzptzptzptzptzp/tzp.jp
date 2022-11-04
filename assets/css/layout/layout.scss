@@ -1,0 +1,104 @@
+//wrapper
+.l-wrapper {
+    background-color: var(--background-color);
+}
+@media screen and (min-width: 960px) {
+    .l-wrapper {
+        &:before {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 100%;
+            background-color: var(--main-color);
+        }
+    }    
+}
+//loading
+.l-loading {
+    &__inner {
+
+    }
+    &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 50%;
+        z-index: -1;
+    }
+    &:before {
+        top: 0;
+        left: 0;
+    }
+    &:after {
+        bottom: 0;
+        left: 0;
+    }
+}
+//header
+.l-header {
+    &__inner {
+        margin: var(--l-header-margin);
+    }
+}
+@media screen and (max-width: 959px) {
+    .l-header {
+        &__inner {
+            justify-content: space-between;
+        }
+    }
+}
+//container
+.l-container {
+    margin: var(--l-container-margin);
+}
+//main
+.l-main {
+    &__inner {
+        padding: .5rem;
+    }
+}
+//section
+.l-section {
+    &__inner {
+
+    }
+}
+//footer
+.l-footer {
+    
+}
+//mobile-screen
+@media screen and (min-width: 960px) {
+    .l-mobile-screen {
+        width: 305px;
+        height: 608px;
+        top: 50%;
+        right: 25%;
+        transform: translate(50%, -50%);
+        &__inner {
+            width: 88%;
+            height: 95%;
+            margin: auto;
+            border-radius: 25px;
+        }
+    }
+}
+@media screen and (max-width: 959px) {
+    .l-mobile-screen {
+        
+    }
+}
+//card
+.l-card {
+    width: 344px;
+    height: 208px;
+}
+//l-talk
+.l-talk {
+    bottom: 15%;
+}
+@media screen and (max-width: 959px) {
+    .l-talk {
+        bottom: 10%;
+    }
+}

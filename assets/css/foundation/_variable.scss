@@ -1,0 +1,37 @@
+@font-face {
+    font-family: "nikumaru";
+    font-display: swap;
+    src: url(../fonts/nikumaru.woff2) format("woff2");
+}
+:root {
+    //color
+    --main-color: tomato;
+    --sub-color: #fff579;
+    --user-red-color: orangered;
+    --user-blue-color: dodgerblue;
+    --user-green-color: mediumspringgreen;
+    --user-yellow-color: #fff579;
+    --background-color: #fff579;
+    --header-color: tomato;
+    --header-font-color: white;
+    --footer-color: transparent;
+    --footer-font-color: tomato;
+
+    //font
+    --font-color: tomato;
+    --link-color: #555;
+    --talk-color: #fe987e;
+    --talk-stroke-color: white;
+    --talk-edge-color: #fff481;
+    --main-font: "nikumaru", "Helvetica Neue", "Helvetica", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Arial", "Yu Gothic", "Meiryo", sans-serif;
+
+    //layout
+        //header
+        --l-header-margin: 5px;
+        --header-logo-size: 45px;
+        --l-container-margin: 0 auto 0;
+        --content-width-pc: 95%;
+        --content-width-sp: 98%;
+        --section-padding-pc: 2em 0;
+        --section-padding-sp: 2em 0;
+}
