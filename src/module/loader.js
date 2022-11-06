@@ -1,3 +1,7 @@
+const start = () => {
+    document.getElementById("js-loading-svg").classList.add("start")
+};
+
 const loaded = () => {
     let target = document.getElementById('js-loading');
     target.classList.add('loaded');
@@ -7,6 +11,6 @@ const loaded = () => {
     };
     setTimeout(function() {
         target.style.display = ('none');
-    },1500);
+    },2550);
 };
-export { loaded };
+export { start, loaded };

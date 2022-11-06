@@ -18,21 +18,6 @@
     &__inner {
 
     }
-    &:before, &:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 50%;
-        z-index: -1;
-    }
-    &:before {
-        top: 0;
-        left: 0;
-    }
-    &:after {
-        bottom: 0;
-        left: 0;
-    }
 }
 //header
 .l-header {

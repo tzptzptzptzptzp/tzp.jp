@@ -1,7 +1,6 @@
 //画面レイアウトに関する処理
 const conditions = window.innerHeight < window.innerWidth || 959 <= window.innerWidth;
 const documentLayout = () => {
-    document.getElementById("js-loading-svg").classList.add("start");
     if (conditions) {
         //iPhoneレイアウト - 上下メニューバーの高さを除外
         let mainHeight = parseInt(window.getComputedStyle(document.getElementById("js-main")).height);

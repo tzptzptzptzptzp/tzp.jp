@@ -1,19 +1,19 @@
 {
   "name": "tzp.jp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "webpack": "webpack",
-    "dev": "NODE_ENV=development run-s webpack",
-    "build": "NODE_ENV=production run-s webpack"
+    "dev": "NODE_ENV=development webpack",
+    "build": "NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tzptzptzptzptzp/tzp.jp.git"
   },
   "keywords": [],
-  "author": "",
+  "author": "てづっぴ",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/tzptzptzptzptzp/tzp.jp/issues"

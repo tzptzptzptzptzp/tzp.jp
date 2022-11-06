@@ -1,4 +1,5 @@
 import * as loader from './module/loader';
+addEventListener('DOMContentLoaded', loader.start);
 addEventListener('load', loader.loaded);
 import * as layout from './layout';
 addEventListener('DOMContentLoaded', layout.documentLayout);

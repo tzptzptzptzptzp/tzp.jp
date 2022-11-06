@@ -11,22 +11,6 @@
     background-color: var(--main-color);
   }
 }
-.l-loading:before, .l-loading:after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 50%;
-  z-index: -1;
-}
-.l-loading:before {
-  top: 0;
-  left: 0;
-}
-.l-loading:after {
-  bottom: 0;
-  left: 0;
-}
-
 .l-header__inner {
   margin: var(--l-header-margin);
 }
@@ -72,4 +56,6 @@
   .l-talk {
     bottom: 10%;
   }
-}/*# sourceMappingURL=layout.css.map */
+}
+
+/*# sourceMappingURL=layout.css.map */
